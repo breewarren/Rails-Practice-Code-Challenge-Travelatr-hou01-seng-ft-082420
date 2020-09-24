@@ -1,0 +1,16 @@
+<h1>Create New Post</h1>
+<br>
+<%=form_for(@post) do |f|%>
+    <%=f.label :title%>
+    <p><%=f.text_field :title%></p>
+    <%=f.label :content%>
+    <p><%=f.text_field :content%></p>
+    <%=f.label :likes%>
+    <p><%=f.text_field :likes%></p>
+
+    <%=f.select :blogger_id, @bloggers.map {|blog| [blog.name, blog.id]} %></p>
+    <%=f.select :destination_id, Destination.all.map {|destination| [destination.name, destination.id]} %></p>
+
+    <%=f.submit "Submit"%>
+<%end%>
+

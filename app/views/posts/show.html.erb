@@ -1,0 +1,12 @@
+<h1>Post Profile Page</h1>
+
+<p>Details:</p>
+<li>Title: <%=@post.title%></li>
+</br>
+<li>Content: <%=@post.content%></li>
+</br>
+<li>Likes: <%=@post.likes%></li>
+
+
+<p>Destination: <%= link_to @post.destination.name, destination_path(@post.destination)%> </p>
+<p>Blogger: <%= link_to @post.blogger.name, blogger_path(@post.blogger)%></p>

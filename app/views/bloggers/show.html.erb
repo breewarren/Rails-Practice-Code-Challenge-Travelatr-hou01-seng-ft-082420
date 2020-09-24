@@ -1,0 +1,18 @@
+<h1><%=@blogger.name%>'s Profile Page</h1>
+
+<p>Details:</p>
+<li>Name: <%=@blogger.name%></li>
+<li>Bio: <%=@blogger.bio%></li>
+<li>Age: <%=@blogger.age%></li>
+
+
+
+
+<p>Total Likes: </p>
+<% total_likes = @blogger.posts.map {|post| post.likes} %>
+<%=total_likes.sum%>
+
+
+<p><%sorted = total_likes.sort!{|x, y| y <=> x}%></p>
+<p><%=sorted[0]%><p><p>
+
